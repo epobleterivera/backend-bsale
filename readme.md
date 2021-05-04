@@ -11,7 +11,8 @@ Esta es una aplicación backend con arquitectura API programada usando Node.JS y
 
 ### Instalación del proyecto
 * Abrir un terminal en la carpeta ```cd``` raiz del proyecto.
-* Ejecutar ```(npm install)```, esto instalará las librerías declaradas en el archivo ```(package.js)``` y creará la carpeta ```(node_modules```).
+* Ejecutar ```(npm install)```, esto instalará las librerías declaradas en el archivo ```(package.js)``` y creará la carpeta ```(node_modules)```.
+*  Si no reconoce la variable nodemon, será necesario utilizar el siguiente comando```(npm install -g nodemon)```
 * Ejecutar ```(npm start)``` en el escritorio princpical del proyecto.
 * Se levantará un servidor local en el puerto http://localhost:3001.
 * Ahora podras realizar las distintas peticiones al backend y así tener acceso a los datos desde la direción de la Base de Datos configurada
