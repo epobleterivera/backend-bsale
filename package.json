@@ -15,7 +15,9 @@
     "express": "^4.17.1",
     "is-empty": "^1.2.0",
     "json": "^11.0.0",
-    "mysql": "github:mysqljs/mysql",
+    "mysql": "github:mysqljs/mysql"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.7"
   }
 }
