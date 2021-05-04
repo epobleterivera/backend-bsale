@@ -17,9 +17,7 @@ const getAllCategory =(req, res, next) => {
 //se realiza el inner joins entre las tablas y se agrega la condición de igualdad entre el nombre de la cate
 //y parametro recibido.
 const getProductCategory = (req, res, next) => {
-  let category = req.query.name;
-  let query = `SELECT product.* FROM product, category WHERE product.category = category.id AND category.name= "${category}"`;
-  connections.query(query, (error, results, fields) => {
+  connections.query(`SELECT product.* FROM product, category WHERE product.category = category.id AND category.name= ?`, [req.query.name],(error, results, fields) => {
       if (error) {
         return console.error(error.message);
       }
