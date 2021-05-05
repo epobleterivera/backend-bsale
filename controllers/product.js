@@ -2,7 +2,15 @@
 import connection from '../models/connection.js';
 import isEmpty from 'is-empty'
 
-//Función que obtinene todos los atributos de la tabla producto
+ /**
+ * Función que extrae todo los datos de la tabla producto
+ * @url https://bsale-tienda-app.herokuapp.com/api/product
+ * @type function
+ * @name: getAllProduct
+ * @method GET
+ * @param  {}
+ * @return { status 200: ok, 404: No hay productos en la BD, 500: error }
+ */
 const getAllProduct = (req, res,next) => {
     let query = `SELECT * FROM product`;
 
@@ -18,8 +26,16 @@ const getAllProduct = (req, res,next) => {
       });
 }
 
-//Función que recibe el nombre del producto mediante parametro desde la url,
-//comparandolo con los nombres de productos existente en la base de datos mediante el operador LIKE
+ /**
+ * Función que recibe como parametro el nombre del producto buscado,
+ * comparandolo con los nombres de productos existente en la base de datos mediante el operador LIKE 
+ * @url https://bsale-tienda-app.herokuapp.com/api/product/name
+ * @type function
+ * @name: getAllProduct
+ * @method GET
+ * @param { name: string }
+ * @return { status 200: ok, 404:Product Not Found, 500: error }
+ */
 const getProductByName = (req, res, next) => {
   connection.query(`SELECT * FROM product WHERE name LIKE '%' ? '%'`, [req.query.name],(error, results, fields) => {
       if(!isEmpty(results)){
