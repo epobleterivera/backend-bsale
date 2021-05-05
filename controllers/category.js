@@ -10,7 +10,7 @@ import isEmpty from 'is-empty'
  * @name getAllCategory
  * @method GET
  * @param {}
- * @response { status 200: ok, 404:No hay categorias en la BD, 500: error }
+ * @response { status 200: ok, 204:No hay categorias en la BD, 500: error }
  */
 const getAllCategory =(req, res, next) => {
     let query = `SELECT * FROM category`;
@@ -19,7 +19,7 @@ const getAllCategory =(req, res, next) => {
       if(!isEmpty(results)){
         res.status(200).json(results);
       }else {
-        res.status(404).json({ 'success': false, 'error': 'No hay categorias en la BD' });
+        res.status(204).json({ 'success': false, 'error': 'No hay categorias en la BD' });
       }
       if (error){
         res.status(500).json({ 'success': false, 'error': 'Error Interno' });
@@ -37,14 +37,14 @@ const getAllCategory =(req, res, next) => {
  * @name: getProductCategory
  * @method GET
  * @param { id: int }
- * @return { status 200: ok, 404: Categoria no encontrada, 500: error }
+ * @return { status 200: ok, 204: Categoria no encontrada, 500: error }
  */
 const getProductCategory = (req, res, next) => {
   connections.query(`SELECT product.* FROM product, category WHERE product.category = category.id AND category.id= ?`, [req.query.id],(error, results, fields) => {
     if(!isEmpty(results)){
       res.status(200).json(results);
     }else {
-      res.status(404).json({ 'success': false, 'error': 'Categoria no encontrada' });
+      res.status(204).json({ 'success': false, 'error': 'Categoria no encontrada' });
     }
     if (error){
       res.status(500).json({ 'success': false, 'error': 'Error Interno' });

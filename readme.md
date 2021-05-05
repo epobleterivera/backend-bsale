@@ -2,6 +2,9 @@
 ### Descripción
 Esta es una aplicación backend con arquitectura API programada usando Node.JS y Express
 
+### Documentación endpoints API
+* para visualizar la documentación de los endpoints y servicios que posee la aplicación, debemos abrir el archivo swagger.json que se encuentra en el directorio principal de la carpeta del backend, copiar su contenido y pegarlo en la siguiente url (https://editor.swagger.io/#)
+
 
 ### Proceso de inicio
 * Instale Node.js: debe tener [Node.js] (https://nodejs.org/en/download/) instalado en su sistema local.
