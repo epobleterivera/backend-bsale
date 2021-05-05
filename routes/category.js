@@ -7,5 +7,5 @@ const router = new Express.Router();
 
 //meidiante el metodo get para la ruta especificada, se va a ejecutar la función definida en el controlador 
 router.get('/', categoryController.getAllCategory);
-router.get('/name',categoryController.getProductCategory);
+router.get('/id',categoryController.getProductCategory);
 export default router; 
